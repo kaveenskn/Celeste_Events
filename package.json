@@ -1,0 +1,20 @@
+{
+  "name": "celeste-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Céleste Events — Monorepo: Client + Admin + API",
+  "scripts": {
+    "dev":         "concurrently \"npm run dev:api\" \"npm run dev:client\" \"npm run dev:admin\"",
+    "dev:client":  "cd client && npm run dev -- --port 3000",
+    "dev:admin":   "cd admin  && npm run dev -- --port 3002",
+    "dev:api":     "cd api    && npm run dev -- --port 3001",
+    "build":       "npm run build:api && npm run build:client && npm run build:admin",
+    "build:client":"cd client && npm run build",
+    "build:admin": "cd admin  && npm run build",
+    "build:api":   "cd api    && npm run build",
+    "install:all": "cd client && npm install && cd ../admin && npm install && cd ../api && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
